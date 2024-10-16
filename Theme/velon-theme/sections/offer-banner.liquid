@@ -1,0 +1,213 @@
+<section class="offer-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="banner-block">
+          <a href="{{ section.settings.offer_banner_url }}" class="banner-img">
+            <span class="image">
+              {% comment %}
+              <img src="https://dummyimage.com/1380x445/e2e2e2/999999" alt="image" class="img-fluid">
+              {% endcomment %}
+              {%- if section.settings.offer_banner -%}  
+              {{ section.settings.offer_banner | image_url: width: 1920 | image_tag:
+              loading: 'lazy',
+              width: section.settings.offer_banner.width,
+              height: section.settings.offer_banner.height,
+              class: "img-fluid",
+              alt: section.settings.offer_banner.alt | escape }} 
+              {%- else -%}
+              {%- capture placeholder -%}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+              {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Offer banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop / Laptop / tablet"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "paragraph",
+      "content": "tablet"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_lg",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_lg",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_xs",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_xs",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Section Background Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_bgcolor_enable",
+      "label": "Show Background Color",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "section_bgcolor",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Section Border"
+    },
+    {
+      "type": "range",
+      "id": "border",
+      "label": "Border",
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#808080"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_enable",
+      "label": "Show Section Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_color_opacity",
+      "label": "Theme Border Color Opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "offer_banner",
+      "label": "Image",
+      "info": "Recommended Size: 1380 x 445px"
+    },
+    {
+      "type": "url",
+      "id": "offer_banner_url",
+      "label": "Banner url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer banner"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.offer-banner {
+  padding-top:{{ section.settings.section_padding_top }}px;
+    padding-bottom:{{ section.settings.section_padding_bottom }}px;
+  {% if section.settings.footer_bg_img_enable %}
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  {% endif %}
+  {% if section.settings.section_bgcolor_enable %}
+  background-color: {{ section.settings.section_bgcolor }};
+  {% endif %}
+  {% if section.settings.border_enable %}
+  border-top: {{ section.settings.border }}px solid {{ section.settings.border_color | color_modify: 'alpha', section.settings.border_color_opacity }};
+  {% endif %}
+}
+@media (max-width: 1199px){ 
+  .offer-banner {
+    padding-top:{{ section.settings.section_padding_top_lg }}px;
+    padding-bottom:{{ section.settings.section_padding_bottom_lg }}px;
+  }
+}
+@media (max-width: 767px){
+  .offer-banner {
+    padding-top:{{ section.settings.section_padding_top_xs }}px;
+    padding-bottom:{{ section.settings.section_padding_bottom_xs }}px;
+  }
+}
+</style>

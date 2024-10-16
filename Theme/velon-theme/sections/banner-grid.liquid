@@ -1,0 +1,341 @@
+<section class="home-banner-grid">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="banner-ul">
+          {% for block in section.blocks %}
+          <li class="banner-li">
+            <div class="banner-block">
+              <a href="{{ block.settings.banner_url }}" class="banner-img">
+                {% comment %}
+                <img src="https://dummyimage.com/430x460/e2e2e2/999999" alt="image" class="img-fluid">
+                {% endcomment %}
+                {%- if block.settings.banner_img -%}
+                {{ block.settings.banner_img | image_url: width: 1024 | image_tag:
+                  loading: 'lazy',
+                  width: block.settings.banner_img.width,
+                  height: block.settings.banner_img.height,
+                  class: "img-fluid",
+                  alt: block.settings.banner_img.alt | escape }}
+                {%- else -%}
+                {%- capture placeholder -%}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+                <div class="banner-content">
+                  {% if block.settings.banner_title != '' %}
+                  <h2 class="title" style="color: {{ block.settings.banner_title_color }};">
+                    {% if block.settings.banner_title_1 != '' %}
+                    <span class="title-1">{{ block.settings.banner_title_1 }}</span>
+                    {% endif %}
+                    {% if block.settings.banner_title_2 != '' %}
+                    <span class="title-2">{{ block.settings.banner_title_2 }}</span>
+                    {% endif %}
+                  </h2>
+                  {% endif %}
+                  <span class="banner-btn"><i class="feather-arrow-up-right"></i></span>
+                </div>
+              </a>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner Grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "paragraph",
+      "content": "Ipad Pro / Ipad"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_ip",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_ip",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_xs",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_xs",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner_grid2",
+      "name": "Banner Item",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Banner Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img",
+          "label": "Banner Image",
+          "info": "Recommended Size: 430x460px"
+        },
+        {
+          "type": "paragraph",
+          "content": "Banner Content"
+        },
+        {
+          "type": "text",
+          "id": "banner_title_1",
+          "label": "Title 1",
+          "default": "Premium"
+        },
+        {
+          "type": "text",
+          "id": "banner_title_2",
+          "label": "Title 2",
+          "default": "speakers"
+        },
+        {
+          "type": "color",
+          "id": "banner_title_color",
+          "label": "Banner Title Color",
+          "default": "#333333"
+        },
+        {
+          "type": "url",
+          "id": "banner_url",
+          "label": "Banner url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Grid"
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .home-banner-grid {
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+  }
+  @media(max-width: 1199px) {
+    .home-banner-grid {
+      padding-top: {{ section.settings.section_padding_top_ip }}px;
+      padding-bottom: {{ section.settings.section_padding_bottom_ip }}px;
+    }
+  }
+  @media(max-width: 767px) {
+    .home-banner-grid {
+      padding-top: {{ section.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ section.settings.section_padding_bottom_xs }}px;
+    }
+  }
+
+  /*=====================================
+      banner css
+  ======================================*/
+  /* main css */
+  .home-banner-grid ul.banner-ul {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    {%- if settings.enable_rtl -%}
+    margin: -30px -30px 0px 0px;
+    {%- else -%}
+    margin: -30px 0px 0px -30px;
+    {%- endif -%}
+  }
+  .home-banner-grid ul.banner-ul li.banner-li {
+    width: calc(33.33% - 30px);
+    {%- if settings.enable_rtl -%}
+    margin: 30px 30px 0px 0px;
+    {%- else -%}
+    margin: 30px 0px 0px 30px;
+    {%- endif -%}
+  }
+  @media (max-width: 991px) {
+    .home-banner-grid ul.banner-ul li.banner-li { 
+      width: calc(50% - 30px);
+    }
+  }
+  @media (max-width: 767px) {
+    .home-banner-grid ul.banner-ul {
+      {%- if settings.enable_rtl -%}
+      margin: -30px -12px 0px 0px;
+      {%- else -%}
+      margin: -30px 0px 0px -12px;
+      {%- endif -%}
+    }
+    .home-banner-grid ul.banner-ul li.banner-li {
+      width: calc(50% - 12px);
+      {%- if settings.enable_rtl -%}
+      margin: 30px 12px 0px 0px;
+      {%- else -%}
+      margin: 30px 0px 0px 12px;
+      {%- endif -%}
+    }
+  }
+  @media (max-width: 479px) {
+    .home-banner-grid ul.banner-ul li.banner-li {
+      width: calc(100% - 12px);
+    }
+  }
+
+  /* banner content css */
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-radius: var(--sti-border-radius);
+  }
+  {%- if settings.enable_rtl -%}
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img img {
+    transform: scaleX(-1);
+  }
+  {%- endif -%}
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img img {
+    -webkit-transition: transform .7s ease-in-out;
+    -o-transition: transform .7s ease-in-out;
+    transition: transform .7s ease-in-out;
+  }
+  .home-banner-grid ul.banner-ul li.banner-li:hover .banner-block a.banner-img img {
+    transform: scale(1.1);
+  }
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img svg {
+    width: 100%;
+  }
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    right: 60px;
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: 1399px) {
+    .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content {
+      top: 30px;
+      left: 30px;
+      right: 30px;
+    }
+  }
+  @media (max-width: 767px) {
+    .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content {
+      left: 12px;
+      right: 12px;
+    }
+  }
+  
+  /* banner text css */
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content h2.title {
+    width: calc(100% - 80px);
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: var(--font-custom-weight-section-header);
+  }
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content h2.title span {
+    display: block;
+  }
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content span.banner-btn {
+    background-color: var(--font-color-body);
+    color: #FFFFFF;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    {%- if settings.enable_rtl -%}
+    margin-right: 30px;
+    {%- else -%}
+    margin-left: 30px;
+    {%- endif -%}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: background-color .3s ease-in-out;
+    -o-transition: background-color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+  }
+  .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img:hover .banner-content span.banner-btn {
+    background-color: var(--font-color-primary);
+  }
+  @media (max-width: 1199px) {
+    .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content h2.title {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 767px) {
+    .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content h2.title {
+      width: calc(100% - 65px);
+    }
+    .home-banner-grid ul.banner-ul li.banner-li .banner-block a.banner-img .banner-content span.banner-btn {
+      {%- if settings.enable_rtl -%}
+      margin-right: 15px;
+      {%- else -%}
+      margin-left: 15px;
+      {%- endif -%}
+    }
+  }
+</style>

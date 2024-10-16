@@ -1,0 +1,28 @@
+{%- comment -%}
+  Renders the country picker for the localization form
+
+  Accepts:
+    - localPosition: pass in the position in which the form is coming up to create specific IDs
+{%- endcomment -%}
+<button type="button" aria-expanded="false" aria-controls="{{ localPosition }}List" aria-describedby="{{ localPosition }}Label">
+  <span>
+    {{- localization.country.currency.iso_code }}
+    {{ localization.country.currency.symbol }}
+  </span>
+  <span class="icon"><i class="fa fa-angle-down"></i></span>
+</button>
+<div class="locali-dd" hidden>
+  <ul id="{{ localPosition }}List" role="list">
+    {%- for country in localization.available_countries -%}
+    <li tabindex="-1">
+      <a class="{% if country.iso_code == localization.country.iso_code %} active{% endif %}" href="#"
+        {% if country.iso_code == localization.country.iso_code %} aria-current="true" {% endif %} data-value="{{ country.iso_code }}">
+          {{- country.currency.iso_code }}
+          {{ country.currency.symbol }} |
+        {{ country.name }}
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>
+<input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">

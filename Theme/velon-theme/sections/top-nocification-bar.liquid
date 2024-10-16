@@ -1,0 +1,294 @@
+{%- if section.settings.topbar_notification_enable -%}
+<section class="top-notification-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="notification-block">
+          <div class="offer-text">
+            {%- if section.settings.offer_text -%}
+            <div class="richtext">
+              {{ section.settings.offer_text }}
+            </div>
+            {%- endif -%}
+            <div class="locali-block">
+              {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+              <div class="locali-box">
+                <noscript>
+                  {%- form 'localization', id: 'HeaderCountryMobileFormNoScript', class: 'localization-form' -%}
+                  <select name="country_code" aria-labelledby="HeaderCountryMobileLabelNoScript">
+                    {%- for country in localization.available_countries -%}
+                      <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
+                        {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  {%- endform -%}
+                </noscript>
+                <localization-form>
+                  {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+                    {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+                  {%- endform -%}
+                </localization-form>
+              </div>
+              {% endif %}
+              {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+              <div class="locali-box">
+                <noscript>
+                  {%- form 'localization', id: 'HeaderLanguageMobileFormNoScript', class: 'localization-form' -%}
+                  <select name="locale_code" aria-labelledby="HeaderLanguageMobileLabelNoScript">
+                    {%- for language in localization.available_languages -%}
+                      <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
+                        {{ language.endonym_name | capitalize }}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  {%- endform -%}
+                </noscript>
+                <localization-form>
+                  {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+                      {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
+                  {%- endform -%}
+                </localization-form>
+              </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Topbar notification",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Show topbar notification"
+    },
+    {
+      "type": "checkbox",
+      "id": "topbar_notification_enable",
+      "label": "Show topbar notification",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section padding top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Section background color"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_bg_color_enable",
+      "label": "Show background color",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background color",
+      "default": "#1950F4"
+    },
+    {
+      "type": "color",
+      "id": "topbar_notification_txt_color",
+      "label": "Section text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Section border"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_enable",
+      "label": "Show section border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border",
+      "label": "Border",
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#808080"
+    },
+    {
+      "type": "range",
+      "id": "border_color_opacity",
+      "label": "Theme border color opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.2
+    },
+    {
+      "type": "header",
+      "content": "Offer Text"
+    },
+    {
+      "type": "richtext",
+      "id": "offer_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Country/region selector",
+      "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "Enable country/region selecto"
+    },
+    {
+      "type": "header",
+      "content": "Language selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "Enable language selector"
+    }
+  ]
+}
+{% endschema %}
+<style>
+.top-notification-bar {
+  position: relative;
+  padding-top:{{ section.settings.section_padding_top }}px;
+  padding-bottom:{{ section.settings.section_padding_bottom }}px;
+  {% if section.settings.section_bg_color_enable %}
+  background-color: {{ section.settings.section_bg_color }};
+  {% endif %}
+  {% if section.settings.border_enable %}
+  border-bottom: {{ section.settings.border }}px solid {{ section.settings.border_color | color_modify: 'alpha', section.settings.border_color_opacity }};
+  {% endif %}
+  z-index: 1;
+}
+
+/* offer text css */
+.top-notification-bar .notification-block .offer-text .richtext {
+  text-align: center;
+}   
+.top-notification-bar .notification-block .offer-text .richtext p {
+  color: {{ section.settings.topbar_notification_txt_color }};
+  text-transform: uppercase;
+}
+
+/* currency css */
+.top-notification-bar .locali-block {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.top-notification-bar .locali-block .locali-box {
+  margin-inline-start: 15px;
+}
+.top-notification-bar .locali-block .locali-box:first-child {
+  margin-inline-start: 0;
+}
+.top-notification-bar .locali-block .locali-box form button {
+  display: flex;
+  align-items: center;
+  color: {{ section.settings.topbar_notification_txt_color }};
+  line-height: 1;
+  {% if settings.other_custom_font_handle_enable %}
+  font-family: var(--font-custom-stack-other);
+  {% else %}
+  font-family: var(--font-stack-other);
+  {% endif %}
+}
+.top-notification-bar .locali-block .locali-box form button .icon {
+  padding-inline-start: 5px;
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 20px;
+  background-color: #fff;
+  z-index: 9;
+  -webkit-animation-name: DropDownSlide;
+  animation-name: DropDownSlide;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  box-shadow: 0 0 15px #00000026;
+  max-height: 350px;
+  max-width: 200px;
+  overflow-y: auto;
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul li {
+  margin-top: 10px;
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul li:first-child {
+  margin-top: 0;
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul {
+  scrollbar-width: thin;
+  -webkit-scrollbar-width: thin;
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul::-webkit-scrollbar {
+  width: 4px;
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 10%);
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul::-webkit-scrollbar-thumb:hover {
+  background-color: var(--font-color-header);
+}
+.top-notification-bar .locali-block .locali-box .locali-dd ul li a.active {
+  color: var(--font-color-primary);
+}
+.top-notification-bar .locali-block {
+  position: relative;
+  z-index: 9;
+}
+.top-notification-bar .locali-block .locali-box form .locali-dd {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  top: 30px;
+  z-index: 99999999;
+}
+</style>

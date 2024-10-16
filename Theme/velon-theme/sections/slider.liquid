@@ -1,0 +1,684 @@
+<section class="slider-content">
+  <div class="slider-main">
+    <div class="home-slider swiper" id="home-slider-{{ section.id }}">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <div class="slide-image">
+            {%- if block.settings.slider_img -%}
+            {{ block.settings.slider_img | image_url: width: 1920 | image_tag:
+            loading: 'lazy',
+            width: block.settings.slider_img.width,
+            height: block.settings.slider_img.height,
+            class: "img-fluid desk-img",
+            alt: block.settings.slider_img.alt | escape }}
+            {%- else -%}  
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg desk-img' }}
+            {%- endif -%}
+
+            {%- if block.settings.mobile_slider_img -%}
+            {{ block.settings.mobile_slider_img | image_url: width: 1920 | image_tag:
+            loading: 'lazy',
+            width: block.settings.mobile_slider_img.width,
+            height: block.settings.mobile_slider_img.height,
+            class: "img-fluid mobile-img",
+            alt: block.settings.mobile_slider_img.alt | escape }}
+            {%- else -%}  
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg mobile-img' }}
+            {%- endif -%}
+
+            <div class="container slider-info-content">
+              <div class="row">
+                <div class="col">
+                  <div class="slider-text-info item-{{ block.id }} {% if block.settings.slider_content_position == "right" %} slider-content-right{% elsif block.settings.slider_content_position == "left" %} slider-content-left{% else %} slider-content-center{% endif %}{% if block.settings.slider_text_position == "right" %} slider-text-right{% elsif block.settings.slider_text_position == "left" %} slider-text-left{% else %} slider-text-center{% endif %}">
+                    {% if block.settings.slider_subtitle_label != '' or block.settings.slider_subtitle_price != '' %}
+                    <span class="subtitle {% if block.settings.slider_subtitle_effect == "e2" %}e2{% elsif block.settings.slider_subtitle_effect == "e3" %}e3{% elsif block.settings.slider_subtitle_effect == "e4" %}e4{% elsif block.settings.slider_subtitle_effect == "e5" %}e5{% else %}e1{% endif %}">
+                      <span class="label">{{ block.settings.slider_subtitle_label }}</span>
+                      <span class="text">{{ block.settings.slider_subtitle_price }}</span>
+                    </span>
+                    {% endif %}
+
+                    {% if block.settings.slider_title != '' %}
+                    <h2 class="{% if block.settings.slider_title_effect == "e2" %}e2{% elsif block.settings.slider_title_effect == "e3" %}e3{% elsif block.settings.slider_title_effect == "e4" %}e4{% elsif block.settings.slider_title_effect == "e5" %}e5{% else %}e1{% endif %}">{{ block.settings.slider_title }}</h2>
+                    {% endif %}
+
+                    <div class="button-price {% if block.settings.slider_btn_bio_effect == "e2" %}e2{% elsif block.settings.slider_btn_bio_effect == "e3" %}e3{% elsif block.settings.slider_btn_bio_effect == "e4" %}e4{% elsif block.settings.slider_btn_bio_effect == "e5" %}e5{% else %}e1{% endif %}">
+                      {% if block.settings.slider_button != '' %}
+                      <a href="{{ block.settings.slider_button_url }}" class="slider-btn btn {% if block.settings.slider_button_style == 'btn-style1' %}btn-style{% elsif block.settings.slider_button_style == 'btn-style2' %}btn-style2{% else %}btn-style3{% endif %}">{{ block.settings.slider_button }}</a>
+                      {% endif %}
+                      <h4 class="custom-title">
+                        {% if block.settings.slider_price_label != '' %}
+                        <span class="text1">{{ block.settings.slider_price_label }}</span>
+                        {% endif %}
+                        {% if block.settings.slider_price_text != '' %}
+                        <span class="text2">{{ block.settings.slider_price_text }}</span>
+                        {% endif %}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% style %}
+            .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.item-{{ block.id }} span.subtitle span.label {
+              color: {{ block.settings.slider_subtitle_color }};
+            }
+            .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.item-{{ block.id }} h2 {
+              color:{{ block.settings.slider_title_color }};
+            }
+            .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.item-{{ block.id }} .button-price h4.custom-title span.text2 {
+              color:{{ block.settings.slider_price_text_color }};
+            }
+            @media (max-width: 600px) {
+              .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.item-{{ block.id }} span.subtitle,
+              .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.item-{{ block.id }} h2,
+              .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.item-{{ block.id }} .button-price h4.custom-title span.text1,
+              .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.item-{{ block.id }} .button-price h4.custom-title span.text2 {
+                color: var(--font-color-body);
+              }  
+            }
+            {% endstyle %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  addEventListener('DOMContentLoaded', (event) => {
+    var swiper = new Swiper('.swiper#home-slider-{{ section.id }}', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      observer: true,
+      observeParents: true,
+      watchSlidesProgress: true,
+      loop: true,
+      {%- if settings.enable_rtl -%}
+      rtl: true,
+      {%- endif -%}
+      grid: {
+        rows: 1,
+        fill: 'row' | 'column',
+      },
+      navigation: {
+        nextEl: '.swiper-next-{{ section.id }}',
+        prevEl: '.swiper-prev-{{ section.id }}',
+      },
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false,
+      //   pauseOnMouseEnter: true
+      // }
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Slider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Slider Autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "slider_autoplay_enable",
+      "label": "Show Slider Autoplay",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "slider_autoplay_timeout",
+      "label": "Slider Autoplay Timeout",
+      "default": "5000",
+      "info": "Put timeout by multiply 'X1000' this field"
+    },
+    {
+      "type": "text",
+      "id": "slider_autoplay_speed",
+      "label": "Slider Autoplay Speed",
+      "default": "250",
+      "info": "Put speed by multiply 'X100' this field"
+    },
+    {
+      "type": "header",
+      "content": "Disable Slider Content On Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "slider_content_enable",
+      "label": "Disable Slider Content",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Slider Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "slider_img",
+          "label": "Image",
+          "info": "Recommended Size: 1920px x 860px"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_slider_img",
+          "label": "Image",
+          "info": "Recommended Size: 1000px x 850px"
+        },
+        {
+          "type": "header",
+          "content": "Slider Content"
+        },
+        {
+          "type": "header",
+          "content": "Slider Subtitle"
+        },
+        {
+          "type": "text",
+          "id": "slider_subtitle_label",
+          "label": "Subtitle Label",
+          "default": "Start from"
+        },
+        {
+          "type": "text",
+          "id": "slider_subtitle_price",
+          "label": "Subtitle Price",
+          "default": "$499.00"
+        },
+        {
+          "type": "color",
+          "id": "slider_subtitle_color",
+          "label": "Subtitle color",
+          "default": "#333333"
+        },
+        {
+          "type": "select",
+          "id": "slider_subtitle_effect",
+          "label": "Subtitle Effect",
+          "options": [
+            {
+              "label": "Effect1",
+              "value": "e1"
+            },
+            {
+              "label": "Effect2",
+              "value": "e2"
+            },
+            {
+              "label": "Effect3",
+              "value": "e3"
+            },
+            {
+              "label": "Effect4",
+              "value": "e4"
+            },
+            {
+              "label": "Effect5",
+              "value": "e5"
+            }
+          ],
+          "default": "e1"
+        },
+        {
+          "type": "header",
+          "content": "Slider Title"
+        },
+        {
+          "type": "text",
+          "id": "slider_title",
+          "label": "Title",
+          "default": "The speakers that impress"
+        },
+        {
+          "type": "color",
+          "id": "slider_title_color",
+          "label": "Title color",
+          "default": "#333333"
+        },
+        {
+          "type": "select",
+          "id": "slider_title_effect",
+          "label": "Title Effect",
+          "options": [
+            {
+              "label": "Effect1",
+              "value": "e1"
+            },
+            {
+              "label": "Effect2",
+              "value": "e2"
+            },
+            {
+              "label": "Effect3",
+              "value": "e3"
+            },
+            {
+              "label": "Effect4",
+              "value": "e4"
+            },
+            {
+              "label": "Effect5",
+              "value": "e5"
+            }
+          ],
+          "default": "e1"
+        },
+        {
+          "type": "header",
+          "content": "Slider Button"
+        },
+        {
+          "type": "text",
+          "id": "slider_button",
+          "label": "Button Text",
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "slider_button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "select",
+          "id": "slider_button_style",
+          "label": "Button Style",
+          "options": [
+            {
+              "label": "Button Style1",
+              "value": "btn-style1"
+            },
+            {
+              "label": "Button Style2",
+              "value": "btn-style2"
+            },
+            {
+              "label": "Button Style3",
+              "value": "btn-style3"
+            }
+          ],
+          "default": "btn-style1"
+        },
+        {
+          "type": "select",
+          "id": "slider_btn_bio_effect",
+          "label": "Button Bio Effect",
+          "options": [
+            {
+              "label": "Effect1",
+              "value": "e1"
+            },
+            {
+              "label": "Effect2",
+              "value": "e2"
+            },
+            {
+              "label": "Effect3",
+              "value": "e3"
+            },
+            {
+              "label": "Effect4",
+              "value": "e4"
+            },
+            {
+              "label": "Effect5",
+              "value": "e5"
+            }
+          ],
+          "default": "e1"
+        },
+        {
+          "type": "header",
+          "content": "Slider Price"
+        },
+        {
+          "type": "text",
+          "id": "slider_price_label",
+          "label": "Label",
+          "default": "5K+"
+        },
+        {
+          "type": "text",
+          "id": "slider_price_text",
+          "label": "Price",
+          "default": "Product"
+        },
+        {
+          "type": "color",
+          "id": "slider_price_text_color",
+          "label": "Price Color",
+          "default": "#333333"
+        },
+        {
+          "type": "header",
+          "content": "Slider Content Position"
+        },
+        {
+          "type": "select",
+          "id": "slider_content_position",
+          "label": "Content Position",
+          "options": [
+            {
+              "label": "left",
+              "value": "left"
+            },
+            {
+              "label": "Right",
+              "value": "right"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "header",
+          "content": "Slider Text Position"
+        },
+        {
+          "type": "select",
+          "id": "slider_text_position",
+          "label": "Text Position",
+          "options": [
+            {
+              "label": "left",
+              "value": "left"
+            },
+            {
+              "label": "Right",
+              "value": "right"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider"
+    }
+  ]
+}
+{% endschema %}
+<style>
+  /*=====================================
+      slider css
+  ======================================*/
+  /* slider img css */
+  .slider-content {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .slider-content .slider-main .home-slider .slide-image svg {
+    width: 100%;
+  }
+  .slider-content .slider-main .home-slider .slide-image .mobile-img {
+    display: none;
+  }
+  @media (max-width: 991px) {
+    .slider-content .slider-main .home-slider .slide-image .mobile-img {
+      display: block;
+    }
+    .slider-content .slider-main .home-slider .slide-image .desk-img {
+      display: none;
+    }
+  }
+
+  /* slider text-info css */
+  .slider-content .slider-main .home-slider .slide-image {
+    display: flex;
+    align-items: center;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+  }
+  @media (max-width: 600px) {
+    {% if section.settings.slider_content_enable %}
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content {
+      display: none;
+    }
+    {% endif %}
+  }
+
+  /* slider content position */
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.slider-content-left {
+    margin-right: auto;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.slider-content-right {
+    margin-left: auto;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.slider-content-center {
+    margin: 0 auto;
+  }
+  /* slider text position */
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.slider-text-left {
+    {%- if settings.enable_rtl -%}
+    text-align: right;
+    {%- else -%}
+    text-align: left;
+    {%- endif -%}
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.slider-text-right {
+    {%- if settings.enable_rtl -%}
+    text-align: left;
+    {%- else -%}
+    text-align: right;
+    {%- endif -%}
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info.slider-text-center {
+    text-align: center;
+  }
+
+  /* effect transition css */
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info span.subtitle {
+    -webkit-animation-delay: 1.0s;
+    animation-delay: 1.0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1.0s;
+    animation-duration: 1.0s;
+  }
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info h2 {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+  }
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info .button-price {
+    -webkit-animation-delay: 2.0s;
+    animation-delay: 2.0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2.0s;
+    animation-duration: 2.0s;
+  }
+
+  /* effect style */
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info span.subtitle.e1,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info h2.e1,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info .button-price.e1 {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info span.subtitle.e2,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info h2.e2,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info .button-price.e2 {
+    {%- if settings.enable_rtl -%}
+    -webkit-animation-name: bounceInRight;
+    animation-name: bounceInRight;
+    {%- else -%}
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+    {%- endif -%}
+  }
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info span.subtitle.e3,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info h2.e3,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info .button-price.e3 {
+    {%- if settings.enable_rtl -%}
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    {%- else -%}
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+    {%- endif -%}
+  }
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info span.subtitle.e4,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info h2.e4,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info .button-price.e4 {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+  }
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info span.subtitle.e5,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info h2.e5,
+  .slider-content .slider-main .home-slider .swiper-wrapper .swiper-slide.swiper-slide-active .slide-image .slider-info-content .slider-text-info .button-price.e5 {
+    -webkit-animation-name: backInDown;
+    animation-name: backInDown;
+  }
+
+  /* slider text css */
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info {
+    width: calc(41.67% - 30px);
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info span.subtitle {
+    font-size: 24px; 
+    font-weight: var(--font-custom-weight-body);
+    margin-bottom: 42px;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info span.subtitle span.text {
+    position: relative;
+    background: var(--theme-gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info span.subtitle span.text::before {
+    background: var(--theme-gradient-color);
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info h2 {
+    font-size: 90px;
+    line-height: 1.1;
+    font-weight: var(--font-custom-weight-header);
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price {
+    margin-top: 46px;
+    display: flex;
+    align-items: center;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price h4.custom-title {
+    font-size: 30px;
+    font-weight: var(--font-subtitle-weight-body);
+    {% if settings.enable_rtl %}
+    margin-right: 30px;
+    {% else %}
+    margin-left: 30px;
+    {% endif %}
+    line-height: 1;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price h4.custom-title span.text1 {
+    position: relative;
+    background: var(--theme-gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price h4.custom-title span.text1::before {
+    background: var(--theme-gradient-color);
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+  }
+  @media(max-width: 1499px) {
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info h2 {
+      font-size: 60px;
+    }
+  }
+  @media(max-width: 1399px) {
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info span.subtitle {
+      margin-bottom: 34px;
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info h2 {
+      font-size: 50px;
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price {
+      margin-top: 40px;
+    }
+  }
+  @media(max-width: 1199px) {
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info span.subtitle {
+      font-size: 20px;
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info h2 {
+      font-size: 40px;      
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price h4.custom-title {
+      font-size: 22px;
+    }
+  }
+  @media (max-width: 991px) {
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info {
+      width: calc(50% - 0px);
+    } 
+  }
+  @media (max-width: 767px) {
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info span.subtitle {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info h2 {
+      font-size: 30px;
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price {
+      margin-top: 24px;
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price h4.custom-title {
+      font-size: 18px;
+      {%- if settings.enable_rtl -%}
+      margin-right: 12px;
+      {%- else -%}
+      margin-left: 12px;
+      {%- endif -%}
+    }
+  }
+  @media (max-width: 479px) {
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info h2 {
+      font-size: 24px;
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .slider-content .slider-main .home-slider .slide-image .slider-info-content .slider-text-info .button-price h4.custom-title {
+      margin-top: 10px;
+      {%- if settings.enable_rtl -%}
+      margin-right: 0px;
+      {%- else -%}
+      margin-left: 0px;
+      {%- endif -%}
+    }
+  }
+</style>
