@@ -1,0 +1,332 @@
+Handle,Title,Body (HTML),Vendor,Product Category,Type,Tags,Published,Option1 Name,Option1 Value,Option1 Linked To,Option2 Name,Option2 Value,Option2 Linked To,Option3 Name,Option3 Value,Option3 Linked To,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Variant Barcode,Image Src,Image Position,Image Alt Text,Gift Card,SEO Title,SEO Description,Google Shopping / Google Product Category,Google Shopping / Gender,Google Shopping / Age Group,Google Shopping / MPN,Google Shopping / Condition,Google Shopping / Custom Product,Google Shopping / Custom Label 0,Google Shopping / Custom Label 1,Google Shopping / Custom Label 2,Google Shopping / Custom Label 3,Google Shopping / Custom Label 4,short description (product.metafields.custom.short_description),timer (product.metafields.custom.timer),video (product.metafields.custom.video),Complementary products (product.metafields.shopify--discovery--product_recommendation.complementary_products),Related products (product.metafields.shopify--discovery--product_recommendation.related_products),Related products settings (product.metafields.shopify--discovery--product_recommendation.related_products_display),Variant Image,Variant Weight Unit,Variant Tax Code,Cost per item,Included / Australia,Price / Australia,Compare At Price / Australia,Included / International,Price / International,Compare At Price / International,Status
+headset-system,Headset system,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"black, electronics, headset, Lightslategray, thistle, velon",true,Color,Lightslategray,,,,,,,,abccd-19,0.0,shopify,32,deny,manual,31.00,39.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-51.jpg?v=1721220976,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-06-28,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-51.jpg?v=1721220976,lb,,310.00,true,,,true,,,active
+headset-system,,,,,,,,,Thistle,,,,,,,,abccd-20,0.0,shopify,55,deny,manual,34.00,39.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-49.jpg?v=1721220976,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-35_4dce3dc5-48d4-4636-ada0-4964dc5ce64a.jpg?v=1721221124,lb,,310.00,,,,,,,
+headset-system,,,,,,,,,Black,,,,,,,,abccd-21,0.0,shopify,22,deny,manual,36.00,39.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-50.jpg?v=1721220976,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-50.jpg?v=1721220976,lb,,310.00,,,,,,,
+headset-system,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-33_211fe0f0-d848-46db-b882-f72782fc5f13.jpg?v=1721221124,4,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+headset-system,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-35_4dce3dc5-48d4-4636-ada0-4964dc5ce64a.jpg?v=1721221124,5,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+vr-headset,Vr headset,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"black, electronics, gray, headset, slategray, velon",true,Color,Black,,,,,,,,abccd-15,0.0,shopify,55,deny,manual,23.00,25.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-1_46d37b42-7ced-437a-a616-8efdb23091a5.jpg?v=1721216114,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-06-18,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-1_46d37b42-7ced-437a-a616-8efdb23091a5.jpg?v=1721216114,lb,,325.00,true,,,true,,,active
+vr-headset,,,,,,,,,Gray,,,,,,,,abccd-13,0.0,shopify,15,deny,manual,21.00,25.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-3.jpg?v=1721216114,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-2.jpg?v=1721216114,lb,,325.00,,,,,,,
+vr-headset,,,,,,,,,Slategray,,,,,,,,abccd-14,0.0,shopify,60,deny,manual,22.00,25.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-4.jpg?v=1721216113,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-6.jpg?v=1721216113,lb,,325.00,,,,,,,
+vr-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-5.jpg?v=1721216114,4,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+vr-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-6.jpg?v=1721216113,5,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+vr-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-7.jpg?v=1721216114,6,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+vr-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-2.jpg?v=1721216114,7,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+gaming-box,Gaming box,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"128gb, 256gb, black, electronics, gray, headset, salmon, velon",true,Color,Gray,,Size,128GB,,,,,abccd-18,0.0,shopify,31,deny,manual,61.00,69.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-46.jpg?v=1721220592,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2027-03-23,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-46.jpg?v=1721220592,lb,,599.00,true,,,true,,,active
+gaming-box,,,,,,,,,Gray,,,256GB,,,,,"",0.0,shopify,0,deny,manual,61.00,69.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-48.jpg?v=1721220591,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-46.jpg?v=1721220592,lb,,599.00,,,,,,,
+gaming-box,,,,,,,,,Salmon,,,128GB,,,,,abccd-19,0.0,shopify,42,deny,manual,65.00,69.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-47.jpg?v=1721220592,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-11_2db38acf-922c-43e8-babb-266d0eae8543.jpg?v=1721220607,lb,,599.00,,,,,,,
+gaming-box,,,,,,,,,Salmon,,,256GB,,,,,"",0.0,shopify,0,deny,manual,61.00,69.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-13_867b8c01-1034-428a-a030-10cc0a142fad.jpg?v=1721220606,4,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-11_2db38acf-922c-43e8-babb-266d0eae8543.jpg?v=1721220607,lb,,599.00,,,,,,,
+gaming-box,,,,,,,,,Black,,,128GB,,,,,abccd-20,0.0,shopify,55,deny,manual,67.00,69.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-11_2db38acf-922c-43e8-babb-266d0eae8543.jpg?v=1721220607,5,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-47.jpg?v=1721220592,lb,,599.00,,,,,,,
+gaming-box,,,,,,,,,Black,,,256GB,,,,,"",0.0,shopify,0,deny,manual,61.00,69.00,true,true,"",,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-47.jpg?v=1721220592,lb,,599.00,,,,,,,
+phone-headset,Phone headset,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"black, electronics, gray, headset, slategray, velon",true,Color,Gray,,,,,,,,abccd-18,0.0,shopify,78,deny,manual,11.00,19.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-43.jpg?v=1721220381,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-10-29,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-43.jpg?v=1721220381,lb,,349.00,true,,,true,,,active
+phone-headset,,,,,,,,,Slategray,,,,,,,,abccd-19,0.0,shopify,42,deny,manual,14.00,19.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-42.jpg?v=1721220380,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-41.jpg?v=1721220380,lb,,349.00,,,,,,,
+phone-headset,,,,,,,,,Black,,,,,,,,abccd-20,0.0,shopify,55,deny,manual,17.00,19.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-44.jpg?v=1721220382,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-44.jpg?v=1721220382,lb,,349.00,,,,,,,
+phone-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-45.jpg?v=1721220380,4,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+phone-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-41.jpg?v=1721220380,5,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+reality-box,Reality box,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"128gb, 256gb, darkslateblue, electronics, headset, mediumblue, navy, velon",true,Color,Darkslateblue,,Size,128GB,,,,,abccd-19,0.0,shopify,32,deny,manual,31.00,39.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-36.jpg?v=1721220083,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-10-27,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-36.jpg?v=1721220083,lb,,310.00,true,,,true,,,active
+reality-box,,,,,,,,,Darkslateblue,,,256GB,,,,,"",0.0,shopify,0,deny,manual,31.00,39.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-37.jpg?v=1721220083,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-36.jpg?v=1721220083,lb,,310.00,,,,,,,
+reality-box,,,,,,,,,Mediumblue,,,128GB,,,,,abccd-21,0.0,shopify,22,deny,manual,36.00,39.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-38.jpg?v=1721220083,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-40.jpg?v=1721220083,lb,,310.00,,,,,,,
+reality-box,,,,,,,,,Mediumblue,,,256GB,,,,,"",0.0,shopify,0,deny,manual,31.00,39.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-39.jpg?v=1721220083,4,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-40.jpg?v=1721220083,lb,,310.00,,,,,,,
+reality-box,,,,,,,,,Navy,,,128GB,,,,,abccd-20,0.0,shopify,55,deny,manual,34.00,39.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-40.jpg?v=1721220083,5,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-38.jpg?v=1721220083,lb,,310.00,,,,,,,
+reality-box,,,,,,,,,Navy,,,256GB,,,,,"",0.0,shopify,0,deny,manual,31.00,39.00,true,true,"",,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-38.jpg?v=1721220083,lb,,310.00,,,,,,,
+smart-headset,Smart headset,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"128gb, 256gb, black, electronics, gray, headset, silver, velon",true,Color,Silver,,Size,128GB,,,,,abccd-18,0.0,shopify,10,deny,manual,25.00,45.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-31.jpg?v=1721219899,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-07-17,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-31.jpg?v=1721219899,lb,,399.00,true,,,true,,,active
+smart-headset,,,,,,,,,Silver,,,256GB,,,,,abccd-19,0.0,shopify,18,deny,manual,25.00,45.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-35.jpg?v=1721219899,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-31.jpg?v=1721219899,lb,,399.00,,,,,,,
+smart-headset,,,,,,,,,Gray,,,128GB,,,,,abccd-21,0.0,shopify,41,deny,manual,25.00,45.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-34.jpg?v=1721219899,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-32.jpg?v=1721219899,lb,,399.00,,,,,,,
+smart-headset,,,,,,,,,Gray,,,256GB,,,,,abccd-22,0.0,shopify,38,deny,manual,25.00,45.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-33.jpg?v=1721219899,4,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-32.jpg?v=1721219899,lb,,399.00,,,,,,,
+smart-headset,,,,,,,,,Black,,,128GB,,,,,abccd-24,0.0,shopify,90,deny,manual,25.00,45.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-32.jpg?v=1721219899,5,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-34.jpg?v=1721219899,lb,,399.00,,,,,,,
+smart-headset,,,,,,,,,Black,,,256GB,,,,,abccd-25,0.0,shopify,28,deny,manual,25.00,45.00,true,true,"",,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-34.jpg?v=1721219899,lb,,399.00,,,,,,,
+3d-headset,3D headset,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"electronics, gray, headset, silver, thistle, velon",true,Color,Silver,,,,,,,,abccd-13,0.0,shopify,42,deny,manual,46.00,49.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-26.jpg?v=1721219683,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-07-05,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-26.jpg?v=1721219683,lb,,249.00,true,,,true,,,active
+3d-headset,,,,,,,,,Gray,,,,,,,,abccd-11,0.0,shopify,66,deny,manual,44.00,49.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-27.jpg?v=1721219682,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-30.jpg?v=1721219682,lb,,249.00,,,,,,,
+3d-headset,,,,,,,,,Thistle,,,,,,,,abccd-12,0.0,shopify,30,deny,manual,45.00,49.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-28.jpg?v=1721219682,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-29.jpg?v=1721219682,lb,,249.00,,,,,,,
+3d-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-29.jpg?v=1721219682,4,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+3d-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-30.jpg?v=1721219682,5,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+gaming-headset,Gaming headset,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"black, electronics, gray, headset, slategray, velon",true,Color,Gray,,,,,,,,abccd-16,0.0,shopify,89,deny,manual,61.00,,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-21_b61e031c-e591-4e99-9c81-e79acf86dafd.jpg?v=1721219317,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-05-03,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-21_b61e031c-e591-4e99-9c81-e79acf86dafd.jpg?v=1721219317,lb,,599.00,true,,,true,,,active
+gaming-headset,,,,,,,,,Slategray,,,,,,,,abccd-19,0.0,shopify,96,deny,manual,65.00,,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-22_048c2ef2-3b21-437d-83b6-7a382ba501b8.jpg?v=1721219317,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-25_574390a1-b0ff-442e-a61e-983ed389e850.jpg?v=1721219317,lb,,599.00,,,,,,,
+gaming-headset,,,,,,,,,Black,,,,,,,,abccd-18,0.0,shopify,32,deny,manual,69.00,,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-23_0780166d-ae74-458a-920a-ac1e0ee5e9af.jpg?v=1721219317,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-23_0780166d-ae74-458a-920a-ac1e0ee5e9af.jpg?v=1721219317,lb,,599.00,,,,,,,
+gaming-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-24_8a68e4dc-f617-4f33-8d63-f29a1d146a05.jpg?v=1721219317,4,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+gaming-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-25_574390a1-b0ff-442e-a61e-983ed389e850.jpg?v=1721219317,5,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+headset-controller,Headset controller,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"black, controller, electronics, gray, slategray, velon",true,Color,Black,,,,,,,,abccd-18,0.0,shopify,70,deny,manual,52.00,79.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-25.jpg?v=1721219013,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-07-26,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-25.jpg?v=1721219013,lb,,199.00,true,,,true,,,active
+headset-controller,,,,,,,,,Gray,,,,,,,,abccd-19,0.0,shopify,84,deny,manual,54.00,79.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-24.jpg?v=1721219013,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-23.jpg?v=1721219014,lb,,199.00,,,,,,,
+headset-controller,,,,,,,,,Slategray,,,,,,,,abccd-20,0.0,shopify,39,deny,manual,65.00,79.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-21.jpg?v=1721219013,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-21.jpg?v=1721219013,lb,,199.00,,,,,,,
+headset-controller,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-22.jpg?v=1721219014,4,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+headset-controller,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-23.jpg?v=1721219014,5,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+virtual-headset,Virtual headset,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"128gb, 256gb, electronics, headset, lavender, slategray, thistle, velon",true,Color,Slategray,,Size,128GB,,,,,abccd-18,0.0,shopify,66,deny,manual,24.00,29.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-16.jpg?v=1721218326,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-05-24,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-16.jpg?v=1721218326,lb,,299.00,true,,,true,,,active
+virtual-headset,,,,,,,,,Slategray,,,256GB,,,,,"",0.0,shopify,0,deny,manual,24.00,29.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-17.jpg?v=1721218325,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-16.jpg?v=1721218326,lb,,299.00,,,,,,,
+virtual-headset,,,,,,,,,Lavender,,,128GB,,,,,abccd-19,0.0,shopify,89,deny,manual,26.00,29.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-18.jpg?v=1721218326,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-20.jpg?v=1721218325,lb,,299.00,,,,,,,
+virtual-headset,,,,,,,,,Lavender,,,256GB,,,,,"",0.0,shopify,0,deny,manual,24.00,29.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-19.jpg?v=1721218326,4,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-20.jpg?v=1721218325,lb,,299.00,,,,,,,
+virtual-headset,,,,,,,,,Thistle,,,128GB,,,,,abccd-20,0.0,shopify,56,deny,manual,28.00,29.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-20.jpg?v=1721218325,5,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-18.jpg?v=1721218326,lb,,299.00,,,,,,,
+virtual-headset,,,,,,,,,Thistle,,,256GB,,,,,"",0.0,shopify,0,deny,manual,24.00,29.00,true,true,"",,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-18.jpg?v=1721218326,lb,,299.00,,,,,,,
+headphone-headset,Headphone headset,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"black, electronics, gray, headset, Lightslategray, velon",true,Color,Black,,,,,,,,abccd-18,0.0,shopify,70,deny,manual,52.00,79.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-13.jpg?v=1721217756,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-03-05,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-13.jpg?v=1721217756,lb,,199.00,true,,,true,,,active
+headphone-headset,,,,,,,,,Gray,,,,,,,,abccd-19,0.0,shopify,68,deny,manual,54.00,79.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-14.jpg?v=1721217758,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-10_796ba4c4-2a9e-4a1b-936c-f9079c14b95d.jpg?v=1721217763,lb,,199.00,,,,,,,
+headphone-headset,,,,,,,,,Lightslategray,,,,,,,,abccd-20,0.0,shopify,76,deny,manual,65.00,79.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-15.jpg?v=1721217756,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-15.jpg?v=1721217756,lb,,199.00,,,,,,,
+headphone-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-11_2a703953-c807-4355-bedc-71811487acc4.jpg?v=1721217763,4,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+headphone-headset,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-10_796ba4c4-2a9e-4a1b-936c-f9079c14b95d.jpg?v=1721217763,5,"",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+reality-headset,Reality headset,"<div class=""more-description"">
+<h2>More Detail</h2>
+<ul>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</li>
+<li>
+<p>Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsumum is simply dummy text.</p>
+</li>
+<li>
+<p>type here your detail one by one li more add</p>
+</li>
+<li>
+<p>has been the industry’s standard dummy text ever since. Lorem Ips</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</li>
+<li>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ‘s standard dummy text. Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text.</p>
+</li>
+</ul>
+</div>",Velon,Electronics,Headset,"128gb, 256gb, black, electronics, gray, headset, silver, velon",true,Color,Black,,Size,128GB,,,,,abccd-19,0.0,shopify,32,deny,manual,31.00,39.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-10.jpg?v=1721217515,1,"",false,,,,,,,,,,,,,,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standa,'2026-01-10,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-10.jpg?v=1721217515,lb,,310.00,true,,,true,,,active
+reality-headset,,,,,,,,,Black,,,256GB,,,,,"",0.0,shopify,0,deny,manual,31.00,39.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-11.jpg?v=1721217515,2,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-10.jpg?v=1721217515,lb,,310.00,,,,,,,
+reality-headset,,,,,,,,,Gray,,,128GB,,,,,abccd-21,0.0,shopify,22,deny,manual,36.00,39.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-12.jpg?v=1721217515,3,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-8.jpg?v=1721217515,lb,,310.00,,,,,,,
+reality-headset,,,,,,,,,Gray,,,256GB,,,,,"",0.0,shopify,0,deny,manual,31.00,39.00,true,true,"",https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-9.jpg?v=1721217515,4,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-8.jpg?v=1721217515,lb,,310.00,,,,,,,
+reality-headset,,,,,,,,,Silver,,,128GB,,,,,abccd-20,0.0,shopify,55,deny,manual,34.00,39.00,true,true,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-8.jpg?v=1721217515,5,"",,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-12.jpg?v=1721217515,lb,,310.00,,,,,,,
+reality-headset,,,,,,,,,Silver,,,256GB,,,,,"",0.0,shopify,0,deny,manual,31.00,39.00,true,true,"",,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0655/5271/1732/files/prod-12.jpg?v=1721217515,lb,,310.00,,,,,,,

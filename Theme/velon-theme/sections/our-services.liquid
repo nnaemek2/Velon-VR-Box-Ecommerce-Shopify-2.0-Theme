@@ -1,0 +1,322 @@
+<section class="our-service-area" {% if section.settings.section_bg_image_enable %}style="background-image: url('{% if section.settings.section_bg_image %}{{ section.settings.section_bg_image | image_url }}{% else %}https://dummyimage.com/1920x700{% endif %}');"{% endif %}>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section-capture">
+          <div class="section-title">
+            {% if section.settings.section_title != '' %}
+            <h2>{{ section.settings.section_title }}</h2>
+            {% endif %}
+          </div>
+        </div>
+        <ul class="single-service">
+          {% for block in section.blocks %}
+          <li class="ser-box">
+            <div class="ser-block">
+              {% if block.settings.service_icon != '' %}
+              <div class="ser-icon">
+                <span><i class="{{ block.settings.service_icon }}"></i></span>
+              </div>
+              {% endif %}
+              <div class="ser-text">
+                {% if block.settings.service_title != '' %}
+                <h4 class="title">{{ block.settings.service_title }}</h4>
+                {% endif %}
+                {% if block.settings.service_desc != '' %}
+                <p>{{ block.settings.service_desc }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Service",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop / Laptop / tablet"
+    },
+    {
+      "type": "range",
+      "id": "our_ser_padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "our_ser_padding_bottom",
+      "label": "Section Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "paragraph",
+      "content": "Ipad pro / Ipad"
+    },
+    {
+      "type": "range",
+      "id": "our_ser_padding_top_ip",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "our_ser_padding_bottom_ip",
+      "label": "Section Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "our_ser_padding_top_xs",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "our_ser_padding_bottom_xs",
+      "label": "Section Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Background Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_bg_image_enable",
+      "label": "Show Backgorund Image",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "section_bg_image",
+      "label": "Image",
+      "info": "Recommended Size: 1920 x 770px"
+    },
+    {
+      "type": "header",
+      "content": "Background Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_bg_color_enable",
+      "label": "Show Backgorund Image",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Virtual reality"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "our_services",
+      "name": "Our Services",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Service icon"
+        },
+        {
+          "type": "text",
+          "id": "service_icon",
+          "label": "Icon class",
+          "default": "feather-aperture"
+        },
+        {
+          "type": "header",
+          "content": "Service Text"
+        },
+        {
+          "type": "text",
+          "id": "service_title",
+          "label": "Service Title",
+          "default": "360 viewing angle"
+        },
+        {
+          "type": "textarea",
+          "id": "service_desc",
+          "label": "Service Description",
+          "default": "Lorem ipsum dolor sit amet sed do eiusmod tempor"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service",
+      "category": "Our Service"
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .our-service-area {
+    padding-top: {{ section.settings.our_ser_padding_top }}px;
+    padding-bottom: {{ section.settings.our_ser_padding_bottom }}px;
+    {% if section.settings.section_bg_image_enable %}
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    {% endif %}
+    {% if section.settings.section_bg_color_enable %}
+    background-color: {{ section.settings.section_bg_color }};
+    {% endif %}
+  }
+  @media (max-width: 1199px) {
+    .our-service-area {
+      padding-top: {{ section.settings.our_ser_padding_top_ip }}px;
+      padding-bottom: {{ section.settings.our_ser_padding_bottom_ip }}px;
+    }
+  }
+  @media (max-width: 767px) {
+    .our-service-area {
+      padding-top: {{ section.settings.our_ser_padding_top_xs }}px;
+      padding-bottom: {{ section.settings.our_ser_padding_bottom_xs }}px;
+    }
+  }
+
+  .our-service-area ul.single-service {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -30px;
+  }
+  .our-service-area ul.single-service li.ser-box {
+    position: relative;
+    width: 25%;
+    margin-top: 30px;
+    padding: 0px 50px;
+  }
+  .our-service-area ul.single-service li.ser-box::before {
+    content: "";
+    background-color: var(--theme-border-color);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    {% if settings.enable_rtl %}
+    left: 0px;
+    {% else %}
+    right: 0px;
+    {% endif %}
+    width: 1px;
+    height: 100%;
+  }
+  .our-service-area ul.single-service li.ser-box:last-child::before {
+    display: none;
+  }
+  .our-service-area ul.single-service li.ser-box .ser-block {
+    text-align: center;
+  } 
+  .our-service-area ul.single-service li.ser-box .ser-block .ser-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .our-service-area ul.single-service li.ser-box .ser-block .ser-icon span {
+    font-size: 32px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--theme-border-color);
+    border-radius: 100%;
+  }
+  .our-service-area ul.single-service li.ser-box:hover .ser-block .ser-icon span {
+    background-color: var(--font-color-primary);
+    border-color: var(--font-color-primary);
+  }
+  .our-service-area ul.single-service li.ser-box .ser-block .ser-text {
+    margin-top: 28px;
+  } 
+  .our-service-area ul.single-service li.ser-box .ser-block .ser-text h4.title {
+    font-size: var(--font-size-subtitle-body);
+    font-weight: var(--font-subtitle-weight-body);
+    line-height: 1;
+  }
+  .our-service-area ul.single-service li.ser-box .ser-block .ser-text p {
+    margin: auto;
+    padding-top: 5px;
+  }
+  .our-service-area ul.single-service li.ser-box .ser-block .ser-icon span,
+  .our-service-area ul.single-service li.ser-box:hover .ser-block .ser-icon span {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  @media (max-width: 1499px) {
+    .our-service-area ul.single-service li.ser-box {
+      padding: 0px 25px;
+    }
+  }
+  @media (max-width: 1199px) {
+    .our-service-area ul.single-service li.ser-box {
+      width: 50%;
+    }
+    .our-service-area ul.single-service li.ser-box:nth-child(2)::before {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    .our-service-area ul.single-service li.ser-box {
+      padding: 0px 12px;
+    }
+  }
+  @media (max-width: 479px) {
+    .our-service-area ul.single-service li.ser-box {
+      width: 100%;
+    }
+    .our-service-area ul.single-service li.ser-box::before {
+      display: none;
+    }
+  }
+</style>

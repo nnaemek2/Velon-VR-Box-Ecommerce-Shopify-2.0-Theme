@@ -1,0 +1,28 @@
+<div class="blog-post">
+  <div class="blog-main-img">
+    <a href="{{ article.url }}" class="blog-img">
+      <span class="image">
+        {%- if article.image -%}
+        {{ article.image.src | image_url: width: 600, height: 510, crop: 'center' | image_tag:
+          loading: 'lazy',
+          width: article.image.width,
+          height: article.image.height,
+          class: "img-fluid",
+          widths: "600",
+          alt: article.image.alt | escape }}
+        {%- else -%}
+        {%- capture placeholder -%}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+        {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </span>
+      <span class="image-icon"><i class="feather-link"></i></span>
+    </a>
+  </div>
+  <div class="blog-post-content">
+    <div class="author-date">
+      <span class="author">{{ 'blogs.article.author_by' | t }} {{ article.author | truncatewords: 2 | remove: "." }}</span>
+      <span class="date-time">{{ article.published_at | date: '<span class="date">%d</span>, <span class="month">%b</span> <span class="year">%y</span>' }}</span>
+    </div>
+    <a href="{{ article.url }}" class="blog-title">{{ article.title | truncate: 100 }}</a>
+  </div>
+</div>

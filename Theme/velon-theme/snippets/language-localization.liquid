@@ -1,0 +1,23 @@
+{%- comment -%}
+  Renders the language picker for the localization form
+
+  Accepts:
+    - localPosition: pass in the position in which the form is coming up to create specific IDs
+{%- endcomment -%}
+<button type="button" aria-expanded="false" aria-controls="{{ localPosition }}List" aria-describedby="{{ localPosition }}Label">
+    <span>{{ localization.language.endonym_name | capitalize }}</span>
+    <span class="icon"><i class="fa fa-angle-down"></i></span>
+  </button>
+  <div class="locali-dd" hidden>
+    <ul id="{{ localPosition }}List" role="list">
+      {%- for language in localization.available_languages -%}
+        <li tabindex="-1">
+          <a class="{% if language.iso_code == localization.language.iso_code %} active{% endif %}"
+            href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %} aria-current="true" {% endif %} data-value="{{ language.iso_code }}">
+            {{ language.endonym_name | capitalize }}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+<input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">

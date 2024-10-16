@@ -1,0 +1,200 @@
+<!-- header-area start -->
+<section class="header-kaj">
+  <div class="header-area">
+    <div class="header-main-area">
+      <div class="container">
+        <div class="header-main">
+          <div class="header-element megamenu-block">
+            <nav class="main-navigation">
+              <div class="megamenu-content">
+                <ul class="main-menu">
+                  {% assign header_main_menu = section.settings.header_main_menu %}
+                  {% for link in linklists[header_main_menu].links %}
+                  {% if linklists[header_main_menu].links != '' %}
+                  {% render 'main-menu', link: link %}
+                  {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div class="header-element logo-wrap">
+            {%- render 'company-logo' -%}
+          </div>
+          <div class="header-element right-block">
+            {%- render 'header-icon', section: section -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <div class="main-menu-area">
+      <nav class="main-navigation">
+          <div class="box-header">
+              <button class="close-box" type="button"><i class="ri-close-line"></i></button>
+          </div>
+          <div class="megamenu-content">
+            <ul class="main-menu">
+                {%- liquid
+                assign header_main_menu = section.settings.header_main_menu
+                for link in linklists[header_main_menu].links
+                if linklists[header_main_menu].links != ''
+                render 'main-menu', link: link
+                endif
+                endfor
+                -%}
+            </ul>
+          </div>
+      </nav>
+    </div>
+  </div>
+</section>
+{%- render 'search-popup-modal' -%}
+{% render 'mini-cart-drawer' %}
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo Notice"
+    },
+    {
+      "type": "paragraph",
+      "content": "For logo go to 'Theme Settings' click on 'Company Logo' & set both Header-Footer Logo"
+    },
+    {
+      "type": "header",
+      "content": "Header Sticky Option"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_sticky_enable",
+      "label": "Show Header Sticky",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "This option available only for 'index', 'collection' & 'product' template respectively"
+    },
+    {
+      "type": "header",
+      "content": "Header Transparent Option"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_transparent_enable",
+      "label": "Show Header Transparent",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "This option available only for 'index' template respectively"
+    },
+    {
+      "type": "header",
+      "content": "Header Background color"
+    },
+    {
+      "type": "color",
+      "id": "header_top_bg_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Main Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "header_main_menu",
+      "label": "Select mainmenu"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+{% if section.settings.header_transparent_enable %}
+{% if template == "index" %}
+.header-kaj .header-area {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+}
+@media (max-width: 1199px) {
+  .header-kaj .header-area {
+    position: unset;
+  } 
+}
+{% endif %}
+{% endif %}
+
+/* header border css */
+{% if template == "product" %}
+.header-kaj {
+  border-bottom: {{ section.settings.border }}px solid {{ section.settings.border_color | color_modify: 'alpha', section.settings.border_color_opacity }};
+}
+{% endif %}
+
+/* header css */
+.header-area .header-main-area {
+  {% if section.settings.header_transparent_enable %}
+  {% if template == "index" %}
+  background-color: transparent;
+  {% else %}
+  background-color: {{ section.settings.header_top_bg_color }};
+  {% endif %}
+  {% else %}
+  background-color: {{ section.settings.header_top_bg_color }};
+  {% endif %}
+}
+
+{% if section.settings.header_sticky_enable %}
+{% if template == 'index' or template == 'collection' or template == 'product' %}
+/* sticky menu css */
+.header-area .header-main-area.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: var(--background-color-body);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+.header-area .header-main-area.is-sticky {
+  animation: smoothScroll 1s forwards;
+  border-bottom: none;
+}
+@keyframes smoothScroll {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+{% endif %}
+{% endif %}
+.megamenu-content ul.main-menu li.menu-link a.link-title,
+button.navbar-toggle, 
+a.header-icon {
+  {% if section.settings.header_transparent_enable %}
+  {% if template == "index" %}
+  color: {{ section.settings.header_text_color }};
+  {% else %}
+  color: var(--font-color-body);
+  {% endif %}
+  {% else %}
+  color: var(--font-color-body);
+  {% endif %}
+}
+</style>

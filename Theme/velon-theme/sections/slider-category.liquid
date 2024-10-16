@@ -1,0 +1,458 @@
+<section class="slider-category">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {% if section.settings.section_title != '' %}
+        <div class="section-capture">
+          <div class="section-title">
+            <h2>{{ section.settings.section_title }}</h2>
+          </div>
+          <div class="swiper-buttons">
+            <button class="swiper-prev swiper-prev-{{ section.id }}"><i class="feather-arrow-left"></i></button>
+            <button class="swiper-next swiper-next-{{ section.id }}"><i class="feather-arrow-right"></i></button>
+          </div>
+        </div>
+        {% endif %}
+        <div class="cat-slider swiper" id="category-slider-{{ section.id }}">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+            {% assign category_product = collections[block.settings.slider_category_handle] %}
+            <div class="swiper-slide">
+              <div class="category-wrap">
+                <a href="{{ category_product.url }}" class="category-block">
+                  <div class="category-main">
+                    <span class="image">
+                      {%- if block.settings.category_image_1 -%}  
+                      {{ block.settings.category_image_1 | image_url: width: 1024 | image_tag:
+                        loading: 'lazy',
+                        width: block.settings.category_image_1.width,
+                        height: block.settings.category_image_1.height,
+                        class: "img-fluid",
+                        alt: block.settings.category_image_1.alt | escape }} 
+                      {%- else -%}
+                      {%- capture placeholder -%}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                      {{ placeholder | placeholder_svg_tag: 'placeholder-svg mobile-img' }}
+                      {%- endif -%}
+                    </span>
+                    <div class="category-content">
+                      <h4 class="title">{{ category_product.title | default: "Category" }}</h4>
+                      <span class="item-btn">
+                        <span class="count">{{ category_product.products.count | default: "0" }}+ </span>
+                        {% if category_product.products.count == 0 or category_product.products.count == 1 %}
+                        <span class="item">{{ section.settings.item_label }}</span>
+                        {%- else -%}
+                        <span class="item">{{ section.settings.items_label }}</span>
+                        {% endif %}           
+                      </span>
+                    </div>
+                  </div>
+                </a>
+                {% if section.settings.cat_shop_title != '' %}
+                <div class="category-button">
+                  <a href="{{ category_product.url }}" class="cat-button btn-style4">{{ section.settings.cat_shop_title }}</a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="swiper-buttons mobile">
+          <button class="swiper-prev swiper-prev-{{ section.id }}"><i class="feather-arrow-left"></i></button>
+          <button class="swiper-next swiper-next-{{ section.id }}"><i class="feather-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  addEventListener('DOMContentLoaded', (event) => {
+    var swiper = new Swiper('.swiper#category-slider-{{ section.id }}', {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      grid: {
+        rows: 1,
+        fill: 'row' | 'column',
+      },
+      observer: true,
+      observeParents: true,
+      watchSlidesProgress: true,
+      loop: true,
+      {%- if settings.enable_rtl -%}
+      rtl: true,
+      {%- endif -%}
+      navigation: {
+        nextEl: '.swiper-next-{{ section.id }}',
+        prevEl: '.swiper-prev-{{ section.id }}',
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 12
+        },
+        320: {
+          slidesPerView: 1,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 12
+        },
+        360: {
+          slidesPerView: 2,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 12
+        },
+        540: {
+          slidesPerView: 2,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 12
+        },
+        640: {
+          slidesPerView: 3,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 12
+        },
+        768: {
+          slidesPerView: 3,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 30
+        },
+        1024: {
+          slidesPerView: 4,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 30
+        },
+        1199: {
+          slidesPerView: 4,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 30
+        },
+        1299: {
+          slidesPerView: 4,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 30
+        },
+        1399: {
+          slidesPerView: 5,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 30
+        },
+        1599: {
+          slidesPerView: 5,
+          grid: {
+            rows: 1,
+            fill: 'row' | 'column',
+          },
+          spaceBetween: 30
+        }
+      }
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Category",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "tablet"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_lg",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_lg",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_xs",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_xs",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Section Background Color"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Shop categories"
+    },
+    {
+      "type": "header",
+      "content": "Category Item Label"
+    },
+    {
+      "type": "text",
+      "id": "item_label",
+      "label": "Item Label",
+      "default": "Item"
+    },
+    {
+      "type": "text",
+      "id": "items_label",
+      "label": "Items Label",
+      "default": "Items"
+    },
+    {
+      "type": "header",
+      "content": "Category Button Text"
+    },
+    {
+      "type": "text",
+      "id": "cat_shop_title",
+      "label": "Button Text",
+      "default": "Shop now"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "slider-category",
+      "type": "product_tab",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Select Your Collection"
+        },
+        {
+          "type": "collection",
+          "id": "slider_category_handle",
+          "label": "Collection"
+        },
+        {
+          "type": "header",
+          "content": "Category Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "category_image_1",
+          "label": "Image 1",
+          "info": "Recommended Size: 125px x 145px"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category"
+    }
+  ]
+}
+{% endschema %}
+<style>
+.slider-category {
+  padding-top:{{ section.settings.section_padding_top }}px;
+  padding-bottom:{{ section.settings.section_padding_bottom }}px;
+  background-color: {{ section.settings.section_bg_color }};
+}
+@media (max-width: 1199px) {
+  .slider-category {
+    padding-top:{{ section.settings.section_padding_top_lg }}px;
+    padding-bottom:{{ section.settings.section_padding_bottom_lg }}px;
+  }
+}
+@media (max-width: 767px) {
+  .slider-category {
+    padding-top:{{ section.settings.section_padding_top_xs }}px;
+    padding-bottom:{{ section.settings.section_padding_bottom_xs }}px;
+  }
+}
+
+/* category title and swiper button css */
+.slider-category .section-capture {
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+}
+.slider-category .section-capture .swiper-buttons {
+  margin-top: 0px;
+}
+@media (max-width: 479px) {
+  .slider-category .section-capture {
+    flex-direction: column;
+  }
+  .slider-category .section-capture .swiper-buttons {
+    display: none;
+  }
+}
+
+/* category item css */
+.slider-category .category-wrap {
+  position: relative; 
+  text-align: center;
+}
+.slider-category .category-wrap a.category-block {
+  position: relative;
+  background-color: var(--extra-color-body);
+  padding: 30px;
+  display: block;
+}
+.slider-category .category-wrap a.category-block::before {
+  background: var(--theme-gradient-color);
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+.slider-category .category-wrap:hover a.category-block::before {
+  opacity: 0.5;
+  visibility: visible;
+}
+.slider-category .category-wrap a.category-block .category-main span.image svg {
+  width: 100%;
+}
+.slider-category .category-wrap a.category-block .category-main .category-content {
+  margin-top: 24px;
+}
+.slider-category .category-wrap a.category-block .category-main .category-content h4.title {
+  font-size: var(--font-size-subtitle-body);
+  font-weight: var(--font-subtitle-weight-body);
+}
+.slider-category .category-wrap a.category-block .category-main .category-content span.item-btn {
+  color: var(--font-color-paragraph);
+  margin-top: 7px;
+}
+.slider-category .category-wrap .category-button {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  left: 30px;
+  right: 30px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+.slider-category .category-wrap:hover .category-button {
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 767px) {
+  .slider-category .category-wrap a.category-block {
+    padding: 30px 12px;
+  }
+  .slider-category .category-wrap .category-button {
+    left: 12px;
+    right: 12px;
+  }
+}
+
+/* mobile slider button css */
+.slider-category .swiper-buttons.mobile {
+  display: none;
+}
+@media (max-width: 479px) {
+  .slider-category .swiper-buttons.mobile {
+    display: flex;
+  }
+}
+</style>

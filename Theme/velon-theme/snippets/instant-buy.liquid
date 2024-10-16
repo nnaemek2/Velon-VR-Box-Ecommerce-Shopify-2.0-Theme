@@ -1,0 +1,50 @@
+{% if product.available %}
+<a href="javascript:void(0)" class="buy-btn btn" id="buyNow" onClick="instantBuy{{ product.id }}()">
+  {{ 'products.product.buy_now' | t }}
+</a>
+{% endif %}
+<script type="text/javascript">
+  function instantBuy{{ product.id }}(){
+    jQuery.post('/cart/add', $(".cart-{{ product.id }}").serialize()).
+     always(function(data){
+     window.location.href ='/checkout';
+  });
+  }
+</script>
+<style>
+  a.buy-btn{
+    position: relative;
+    color: {{ settings.btn2_hvr_color }};
+    font-size: {{ settings.btn2_font_size }}px;
+    padding: {{ settings.btn2_padding_top_bottom }}px {{ settings.btn2_padding_left_right }}px;
+    background: -webkit-linear-gradient(0deg,{{ settings.btn2_gradient_color_2 }} 0,{{ settings.btn2_gradient_color_1 }} 100%);
+    text-transform: {{ settings.btn2_text_transform }};
+    font-weight: {{ settings.btn2_font_weight }};
+    border: {{ settings.btn2_border }}px {{ settings.btn2_border_property }} {{ settings.btn2_border_color | color_modify: 'alpha', settings.btn3_border_color_opacity }};
+    border-radius: {{ settings.btn2_border_radius }}px;
+    letter-spacing: {{ settings.btn2_letter_spacing }}px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    text-align: center;
+  }
+  a.buy-btn:hover{
+    color: {{ settings.btn2_color }};
+    -webkit-background-clip: {{ settings.btn2_hvr_color }};
+    -webkit-text-fill-color: {{ settings.btn2_hvr_color }};
+    background: -webkit-linear-gradient(0deg,{{ settings.btn2_gradient_color_1 }} 0,{{ settings.btn2_gradient_color_2 }} 100%);
+    border: {{ settings.btn2_border }}px {{ settings.btn2_border_property }} {{ settings.btn2_border_hvr_color | color_modify: 'alpha', settings.btn2_border_hvr_color_opacity }};
+  }
+  a.buy-btn[disabled],
+  a.buy-btn.disabled{
+    color: #eaeaea;
+    background-color: #ababab;
+    opacity: .65;
+    pointer-events: none;
+  }
+  @media(max-width: 767px){
+    a.buy-btn{
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+  }
+</style>
